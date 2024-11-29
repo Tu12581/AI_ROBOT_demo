@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作答界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Example</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #search_box {
+            width: 80%;
+            padding: 10px;
+            font-size: 17px;
+        }
+        #search-btn {
+            padding: 10px 20px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="">
+    {% csrf_token %}  <!--使用csrf表单向后端传参-->
+    <label for="search_box"></label><!--label的for与后续跟的框id要对应-->
+    <input type="text" id="search_box" name="box" placeholder="请输入要搜索的内容">
+    <button type="submit" id="search-btn">搜索</button>  <!--用于提交网页表单到后台的按钮-->
+</form>
+<div>查询结果为：</div>
+<div>{{n1}}</div>
+</body>
+</html>
